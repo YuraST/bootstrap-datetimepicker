@@ -124,11 +124,11 @@
                 var headTemplate = $('<thead>')
                         .append($('<tr>')
                             .append($('<th>').addClass('prev').attr('data-action', 'previous')
-                                .append($('<span>').addClass(options.icons.previous))
+                                .append($('<span>'))
                                 )
                             .append($('<th>').addClass('picker-switch').attr('data-action', 'pickerSwitch').attr('colspan', (options.calendarWeeks ? '6' : '5')))
                             .append($('<th>').addClass('next').attr('data-action', 'next')
-                                .append($('<span>').addClass(options.icons.next))
+                                .append($('<span>'))
                                 )
                             ),
                     contTemplate = $('<tbody>')
@@ -555,7 +555,7 @@
                     if (currentDate.day() === 0 || currentDate.day() === 6) {
                         clsName += ' weekend';
                     }
-                    row.append('<td data-action="selectDay" class="day' + clsName + '">' + currentDate.date() + '</td>');
+                    row.append('<td data-action="selectDay" class="day' + clsName + '">' + '<span>' + currentDate.date() + '</span>' + '</td>');
                     currentDate.add(1, 'd');
                 }
 
