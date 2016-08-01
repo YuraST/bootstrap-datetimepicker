@@ -767,10 +767,10 @@
 
                 selectDay: function (e) {
                     var day = viewDate.clone();
-                    if ($(e.target).is('.old')) {
+                    if ($(e.target).parent().is('.old')) {
                         day.subtract(1, 'M');
                     }
-                    if ($(e.target).is('.new')) {
+                    if ($(e.target).parent().is('.new')) {
                         day.add(1, 'M');
                     }
                     setValue(day.date(parseInt($(e.target).text(), 10)));
